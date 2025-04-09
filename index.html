@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PVP</title>
+    <link rel="stylesheet" href="css.css">
+    
+    <script src="javascript.js"></script>
+</head>
+<body id="main">
+    <div id="scoreboard">
+        <div class="sor">
+            <span id="nameP1">játékos egy</span>
+            <span class="elvalasztas">|</span>
+            <span class="szempontok">Név</span>
+            <span class="elvalasztas">|</span>
+            <span id="nameP2">játékos kettő</span>
+        </div>
+        <div class="sor">
+            <span id="scoreP1" class="szamlalas">0</span>
+            <span class="elvalasztas">|</span>
+            <span class="szempontok">Nyert</span>
+            <span class="elvalasztas">|</span>
+            <span id="scoreP2" class="szamlalas">0</span>
+        </div>
+        <div class="sor">
+            <span id="dmgP1" class="szamlalas">0</span>
+            <span class="elvalasztas">|</span>
+            <span class="szempontok">Sebzés</span>
+            <span class="elvalasztas">|</span>
+            <span id="dmgP2" class="szamlalas">0</span>
+        </div>
+    </div>
+    <div id="hatter">
+    <div id="fomenu">
+        <h1>Tank</h1>
+        <div class="konténer">
+            <div class="group input1">      
+                <input type="text" required id="nev1">
+                <span class="csik"></span>
+                <label>Első játkos neve</label>
+              </div>
+              <div class="group input2">      
+                <input type="text" required id="nev2">
+                <span class="csik"></span>
+                <label>Második játkos neve</label>
+              </div>
+            </div>
+        <div class="konténer">
+        <div class="lowgraph"><p>Kímélő mód</p>
+            <label class="felirat">
+                <input type="checkbox" id="low" checked>
+                <span class="csuszka kor"></span>
+            </label>
+        </div>
+        <div class="lowgraph">
+            <p>Zene</p>
+            <label class="felirat">
+                <input type="checkbox" id="zene">
+                <span class="csuszka kor"></span>
+            </label>
+        </div>
+    </div>
+        <div class="start-konténer">
+            <button onclick="document.getElementById('fomenu').style.display = 'none'; document.getElementById('controls').style.display = 'flex';">IRÁNYÍTÁSOK</button>
+            <button onclick="newGame(); game(); game(); PowerUpLetrehozas()">START</button>
+        </div>
+    </div>
+<div id="controls">
+        <h1>Irányítások</h1>
+        
+        <dl style="height: 30vh;">
+            <h2>1.játékos</h2>
+            <dd>-  A balra</dd>
+            <dd>-  D jobbra</dd>
+            <dd>-  W fel</dd>
+            <dd>-  S le</dd>
+            <dd>-  Q lövés</dd>
+        </dl>
+        <dl style="height: 30vh;">
+            <h2>2.játékos</h2>
+            <dd>-  ⬅ balra</dd>
+            <dd>-  ➡ jobbra</dd>
+            <dd>-  ⬆ fel</dd>
+            <dd>-  ⬇le</dd>
+            <dd>-  SPACE lövés</dd>
+        </dl>
+    
+<button onclick="document.getElementById('controls').style.display = 'none'; document.getElementById('fomenu').style.display = 'flex';">VISSZA</button>
+</div>
+</div>
+    <div id="p1Div">
+        <p id="p1Nev">Név egy</p>
+        <meter id="hp1" min="0" max="100" value="100" low="30" high="70" optimum="100"></meter>
+        <img src="" width="100px" id="p1">
+    </div>
+    <div id="halal">
+        <h1 id="halalH1"></h1>
+        <button id="halalBtn" onclick="newGame(); game(); game();">Új játék</button>
+        <button id="mainmenuBtn" onclick="reset()">Főmenü</button>
+    </div>
+    <div>
+    <img src="images/cloud2.png" style="left: -24vw; top: -23px; position: absolute; width: 384px;" class="felho">
+    <img src="images/cloud.png" style="left: 5vw; top: 0px; position: absolute; width: 288px;" class="felho">
+    <img src="images/cloud.png" style="left: 24vw; top: 20px; position: absolute; width: 384px;" class="felho">    
+    <img src="images/cloud2.png" style="left: 47vw; top: 11px; position: absolute; width: 288px;" class="felho">    
+    <img src="images/cloud2.png" style="left: 70vw; top: 30px; position: absolute; width: 192px;" class="felho">    
+</div>
+    <img src="images/cactus.png" class="cactus terrain" style="left: 63vw; bottom: 80px;">
+    <img src="images/cactus.png" class="cactus terrain" style="left: 15vw; bottom: 48px;">
+    <img src="images/cactus.png" class="cactus terrain" style="left: 42vw; bottom: 0px;">
+    <img src="images/cactus.png" class="cactus terrain" style="left: 71vw; bottom: 40px;">
+    <img src="images/smallcactus.png" class="smallcactus terrain" style="left: 25vw; bottom: 0px;">
+    <div id="p2Div">
+        <p id="p2Nev">Név kettő</p>
+        <meter id="hp2" min="0" max="100" value="100" low="30" high="70" optimum="100"></meter>
+        <img src="" width="100px" id="p2">
+    </div>
+    <div id="toplayer"></div>
+    <div id="ground"></div>
+    <audio id="sound1" src="sounds/Advance Australia.mp3" loop></audio>
+    <audio id="sound2" src="sounds/Duty, Steel My Heart.mp3" loop></audio>
+</body>
+</html>
